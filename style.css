@@ -57,6 +57,10 @@ img {
   padding-right: 2px;
 }
 
+.information:hover {
+  cursor: pointer;
+}
+
 .body {
   margin: 0 12vw 4vh 12vw;
   background-color: black;
@@ -100,11 +104,11 @@ img {
 }
 
 .card.complete:hover {
-  background-color:rgb(26, 26, 26);
+  background-color:rgb(15, 15, 15);
 }
 
 .card.incomplete:hover {
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(241, 241, 241);
 }
 
 .card h1 {
@@ -113,15 +117,6 @@ img {
 
 .card h3 {
   font-weight: 300;
-}
-
-.card button {
-  height: 75px;
-  flex-shrink: 1;
-  border-radius:16px;
-  font-size: 15px;
-  font-weight: 300;
-  transition: background-color 0.15s;
 }
 
 .incomplete button {
@@ -145,6 +140,30 @@ img {
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+.button-area {
+  display: flex;
+}
+
+.card button {
+  height: 75px;
+  flex-shrink: 1;
+  border-radius: 16px 0 0 16px;
+  font-size: 15px;
+  font-weight: 300;
+  transition: background-color 0.15s;
+  flex: 5;
+}
+
+.card .trash {
+  flex: 1;
+  border-radius: 0 16px 16px 0;
+  background-color: black;
+}
+
+.card .trash:hover {
+  background-color: rgb(197, 55, 62);
 }
 
 .card.add {

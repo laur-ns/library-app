@@ -3,3 +3,60 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4vh 12vw 4vh 12vw;
+  padding: 0 1vw 0 1vw;
+  border-radius: 5px;
+  height: 50px;
+}
+
+#logo {
+  margin-left: 7px;
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+  font-family: 'Manrope', sans-serif;
+}
+
+img {
+  filter: invert(100%);
+}
+
+.header-title {
+
+}
+
+.info-wrapper {
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+
+.info-wrapper:hover {
+  box-shadow: 0 0 9px 2px white;
+}
+
+.info-wrapper:active {
+  background-color: rgb(212, 212, 212);
+}
+
+.information {
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  margin-top: 1px;
+  padding-right: 2px;
+}

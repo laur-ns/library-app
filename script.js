@@ -15,8 +15,9 @@ function addBookToLibrary() {
   myLibrary.push(new Book(title, author, pages, read));
 }
 
-Book('Harry Potter', 'JK Rowling', '500', true);
-Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
+// -- temp -- //
+myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
+myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
 
 function test() {
   for (let key of myLibrary) {
@@ -25,6 +26,5 @@ function test() {
     append.textContent += key.author;
     append.textContent += key.pages;
     append.textContent += key.read;
-    append.textContent += '<br></br>';
   }
 }

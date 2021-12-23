@@ -76,6 +76,7 @@ function addBookToLibrary() {
   let read = document.querySelector('#isRead').checked;
   myLibrary.push(new Book(title, author, pages, read));
   displayBooks();
+  hideForm();
 }
 
 function setFormEventListeners() {

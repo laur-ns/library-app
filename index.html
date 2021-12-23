@@ -29,14 +29,21 @@
       </div>
     </div>
 
-    <div class='book-form'>
-      <form id='new-book'>
-        <h1>Add a new book</h1>
-        <input type='text' placeholder='Title' name='bookTitle'>
-        <input type='text' placeholder='Author' name='bookAuthor'>
-        <input type='number' placeholder='Number of pages' name='numPages'>
-        <label for='isRead'><input type='checkbox' name='isRead'>
-      </form>
+    <div class='blur'>
+      <div class='book-form'>
+        <div class='close'>X</div>
+        <form id='new-book'>
+          <h1>Add a New Book</h1>
+          <input type='text' placeholder='Title' name='bookTitle'>
+          <input type='text' placeholder='Author' name='bookAuthor'>
+          <input type='number' placeholder='Number of pages' name='numPages'>
+          <div class='checkbox-wrapper'>
+            <label for='isRead'>Finished reading: </label>
+            <input type='checkbox' name='isRead'>
+          </div>
+          <input type='submit' name='submitNewBook'>
+        </form>
+      </div>
     </div>
   </body>
 </html>

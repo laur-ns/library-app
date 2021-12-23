@@ -103,6 +103,9 @@ function setPageEventListeners() {
   trashBtn.forEach(e => {
     e.addEventListener('click', deleteCard);
   })
+  // display info popup
+  let infoBtn = document.querySelector('#info-button');
+  infoBtn.addEventListener('click', showInfoPopup);
 }
 
 function deleteCard() {
@@ -122,17 +125,23 @@ function showAddBooksForm() {
   document.getElementById('blur').style.display = 'block';
 }
 
+function showInfoPopup() {
+  document.getElementById('info').style.display = 'flex';
+  document.getElementById('blur').style.display = 'block';
+}
+
 function showEditForm() {
   document.getElementById('blur').style.display = 'block';
 }
 
 function hideForm() {
   document.getElementById('add-book').style.display = 'none';
+  document.getElementById('info').style.display = 'none';
   document.getElementById('blur').style.display = 'none';
 }
 // -- initialize -- //
-myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
-myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
+myLibrary[0] = new Book('The Lord of The Rings', 'J.R.R. Tolkien', '1216', false);
+myLibrary[1] = new Book('Travel Team', 'Mike Lupica', '304', true);
 displayBooks();
 setFormEventListeners();
 setPageEventListeners();

@@ -64,6 +64,7 @@ function appendCard(newCard) {
 function removeCards() {
   let cards = document.querySelectorAll('.card');
   cards.forEach(e => {
+    // remove all cards except add card
     if (!(e.getAttribute('class').includes('add'))) {
       e.remove();
     }
@@ -80,24 +81,28 @@ function addBookToLibrary() {
 }
 
 function setFormEventListeners() {
+  // fires when user clicks the add card
   let cardPlus = document.querySelector('.body .add');
-  cardPlus.addEventListener('click', showAddForm);
+  cardPlus.addEventListener('click', showAddBooksForm);
 
+  // fires when user clicks an existing card
   let cardsEdit = document.querySelectorAll('.body .card');
   cardsEdit.forEach(e => {
     e.addEventListener('click', showEditForm)
   });
 
+  // when user clicks X or outside of form
   let closeForm = document.querySelectorAll('.close, #blur');
   closeForm.forEach(e => {
     e.addEventListener('click', hideForm);
   });
 
+  // when user clicks submit to add a new book
   let newBook = document.querySelector('#new-book button');
   newBook.addEventListener('click', addBookToLibrary);
 }
 
-function showAddForm() {
+function showAddBooksForm() {
   document.getElementById('add-book').style.display = 'flex';
   document.getElementById('blur').style.display = 'block';
 }

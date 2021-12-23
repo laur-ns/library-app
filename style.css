@@ -185,3 +185,14 @@ img {
   font-size: 200px;
   font-weight: 900;
 }
+
+.book-form {
+  position: fixed;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, 0);
+  height: 50%;
+  width: 40%;
+  background-color: black;
+  border: 2px solid white;
+}

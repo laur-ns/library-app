@@ -62,12 +62,10 @@ function appendCard(newCard) {
 }
 
 function removeCards() {
-  let cards = document.querySelectorAll('.card');
+  let cards = document.querySelectorAll('.card.incomplete, .card.complete');
   cards.forEach(e => {
     // remove all cards except add card
-    if (!(e.getAttribute('class').includes('add'))) {
-      e.remove();
-    }
+    e.remove();
   });
 }
 
@@ -86,18 +84,18 @@ function setFormEventListeners() {
   cardPlus.addEventListener('click', showAddBooksForm);
 
   // fires when user clicks an existing card
-  let cardsEdit = document.querySelectorAll('.body .card');
+  let cardsEdit = document.querySelectorAll('.card.complete, .card.incomplete');
   cardsEdit.forEach(e => {
     e.addEventListener('click', showEditForm)
   });
 
-  // when user clicks X or outside of form
+  // fires when user clicks X or outside of form
   let closeForm = document.querySelectorAll('.close, #blur');
   closeForm.forEach(e => {
     e.addEventListener('click', hideForm);
   });
 
-  // when user clicks submit to add a new book
+  // fires when user clicks submit to add a new book
   let newBook = document.querySelector('#new-book button');
   newBook.addEventListener('click', addBookToLibrary);
 }

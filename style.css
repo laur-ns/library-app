@@ -74,7 +74,7 @@ img {
 .card {
   width: 32%;
   min-width: 405px;
-  max-width: 460px;
+  max-width: 550px;
   flex-grow: 1;
   height: 300px;
   border-radius: 5px;
@@ -92,19 +92,19 @@ img {
   gap: 8px;
 }
 
-.card.complete {
+.card.complete, .add {
   background-color:black;
   border: 2px solid white;
   color: white;
 }
 
+.add:hover {
+  background-color:rgb(15, 15, 15);
+}
+
 .card.incomplete {
   background-color: white;
   color: black;
-}
-
-.card.complete:hover {
-  background-color:rgb(15, 15, 15);
 }
 
 .card.incomplete:hover {

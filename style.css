@@ -69,8 +69,9 @@ img {
 }
 
 .card {
-  width: 32.6%;
-  min-width: 32%;
+  width: 350px;
+  flex-grow: 1;
+  min-width: 300px;
   height: 300px;
   border-radius: 5px;
   display: flex;

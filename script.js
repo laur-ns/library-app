@@ -84,12 +84,6 @@ function setFormEventListeners() {
   let cardPlus = document.querySelector('.body .add');
   cardPlus.addEventListener('click', showAddBooksForm);
 
-  // fires when user clicks an existing card
-  let cardsEdit = document.querySelectorAll('.card.complete, .card.incomplete');
-  cardsEdit.forEach(e => {
-    e.addEventListener('click', showEditForm)
-  });
-
   // fires when user clicks X or outside of form
   let closeForm = document.querySelectorAll('.close, #blur');
   closeForm.forEach(e => {

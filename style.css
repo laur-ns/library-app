@@ -35,6 +35,7 @@ img {
   border: none;
   border-radius: 100%;
   margin-right: 7px;
+  cursor: pointer;
 }
 
 .info-wrapper:hover {
@@ -42,7 +43,7 @@ img {
 }
 
 .info-wrapper:active {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(236, 236, 236);
 }
 
 .information {
@@ -55,10 +56,6 @@ img {
   font-family: 'Merriweather', serif;
   margin-top: 1px;
   padding-right: 2px;
-}
-
-.information:hover {
-  cursor: pointer;
 }
 
 .body {
@@ -81,7 +78,6 @@ img {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  cursor: pointer;
   font-family: 'Source Serif Pro', serif;
   justify-content: space-between;
 }
@@ -105,10 +101,6 @@ img {
 .card.incomplete {
   background-color: white;
   color: black;
-}
-
-.card.incomplete:hover {
-  background-color: rgb(241, 241, 241);
 }
 
 .card h1 {
@@ -170,6 +162,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .card .plus-wrapper {

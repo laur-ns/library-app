@@ -7,12 +7,14 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.toggleRead = () => {
-  // insert code here
+Book.prototype.toggleRead = function() {
+  if (this.read) { this.read = false; }
+    else { this.read = true }
+  console.log(this.read);
 }
 
 Book.prototype.removeBook = () => {
-  // insert code here
+  console.log('congrats! u ran the removebook function!');
 }
 
 function displayBooks() {
@@ -45,6 +47,7 @@ function CreateElements(index) {
   this.btnsArea.setAttribute('class', 'button-area');
   this.markCompleteBtn = document.createElement('button');
   this.markCompleteBtn.textContent = 'Mark as complete';
+  this.markCompleteBtn.setAttribute('class', 'mark-complete');
   this.trashBtn = document.createElement('button');
   this.trashBtn.setAttribute('class', 'trash');
 }
@@ -63,8 +66,7 @@ function appendCard(newCard) {
 
 function removeCards() {
   let cards = document.querySelectorAll('.card.incomplete, .card.complete');
-  cards.forEach(e => {
-    // remove all cards except add card
+  cards.forEach(e => { // remove all cards except add card
     e.remove();
   });
 }
@@ -83,16 +85,29 @@ function setFormEventListeners() {
   // fires when user clicks the add card
   let cardPlus = document.querySelector('.body .add');
   cardPlus.addEventListener('click', showAddBooksForm);
-
   // fires when user clicks X or outside of form
   let closeForm = document.querySelectorAll('.close, #blur');
   closeForm.forEach(e => {
     e.addEventListener('click', hideForm);
   });
-
   // fires when user clicks submit to add a new book
   let newBook = document.querySelector('#new-book button');
   newBook.addEventListener('click', addBookToLibrary);
+}
+
+function setPageEventListeners() {
+  let completeBtn = document.querySelectorAll('.mark-complete');
+  completeBtn.forEach(e => {
+    e.addEventListener('click', changeReadStatus);
+  });
+}
+
+function changeReadStatus() {
+  // get index from ID of parent node
+  let cardId = this.parentNode.parentNode.id;
+  myLibrary[cardId].toggleRead();
+  displayBooks();
+  setPageEventListeners();
 }
 
 function showAddBooksForm() {
@@ -113,3 +128,4 @@ myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
 myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
 displayBooks();
 setFormEventListeners();
+setPageEventListeners();

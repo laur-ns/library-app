@@ -186,7 +186,7 @@ img {
   font-weight: 900;
 }
 
-.blur {
+#blur {
   display: none;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.288);
@@ -197,8 +197,9 @@ img {
   backdrop-filter: blur(3px);
 }
 
-.book-form {
+#add-book {
   display: none;
+  flex-direction: column;
   position: fixed;
   left: 50%;
   top: 19%;
@@ -210,8 +211,6 @@ img {
   border-radius: 5px;
   box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.315);
   font-family: 'Source Serif Pro', serif;
-  display: flex;
-  flex-direction: column;
 }
 
 .close {
@@ -241,14 +240,16 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25px 50px 25px 50px;
-  gap: 18px;
+  padding: 25px 50px 75px 50px;
+  gap: 22px;
+  height: 100%;
 }
 
 .text {
   width: 100%;
-  height: 50px;
+  height: 68px;
   padding: 8px;
+  font-size: 18px;
 }
 
 .checkbox-wrapper {
@@ -256,6 +257,8 @@ img {
   align-items: center;
   gap: 15px;
   font-size: 18px;
+  margin: 10px 0 10px 0;
+  padding-right: 2px;
 }
 
 .checkbox {
@@ -272,6 +275,7 @@ img {
   font-size: 16px;
   border-radius: 5px;
   width: 100%;
+  flex: 1 1 auto;
   height: 55px;
   cursor: pointer;
   transition: background-color 0.1s;

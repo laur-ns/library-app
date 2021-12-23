@@ -68,7 +68,36 @@ function appendCard(newCard) {
   newCard.btnsArea.append(newCard.trashBtn);
 }
 
+function setFormEventListeners() {
+  let cardPlus = document.querySelector('.body .add');
+  cardPlus.addEventListener('click', showAddForm);
+
+  let cardsEdit = document.querySelectorAll('.body .card');
+  cardsEdit.forEach(e => {
+    e.addEventListener('click', showEditForm)
+  });
+
+  let closeForm = document.querySelectorAll('.close, #blur');
+  closeForm.forEach(e => {
+    e.addEventListener('click', hideForm);
+  });
+}
+
+function showAddForm() {
+  document.getElementById('add-book').style.display = 'flex';
+  document.getElementById('blur').style.display = 'block';
+}
+
+function showEditForm() {
+
+}
+
+function hideForm() {
+  document.getElementById('add-book').style.display = 'none';
+  document.getElementById('blur').style.display = 'none';
+}
 // -- initialize -- //
 myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
 myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
 displayBooks();
+setFormEventListeners();

@@ -9,12 +9,7 @@ function Book(title, author, pages, read) {
 
 Book.prototype.toggleRead = function() {
   if (this.read) { this.read = false; }
-    else { this.read = true }
-  console.log(this.read);
-}
-
-Book.prototype.removeBook = () => {
-  console.log('congrats! u ran the removebook function!');
+  else { this.read = true }
 }
 
 function displayBooks() {
@@ -32,6 +27,7 @@ function displayBooks() {
     newCard.trashBtn.innerHTML = "<img src='./trash.svg'></img>"
     appendCard(newCard);
   }
+  setPageEventListeners();
 }
 
 function CreateElements(index) {
@@ -78,6 +74,7 @@ function addBookToLibrary() {
   let read = document.querySelector('#isRead').checked;
   myLibrary.push(new Book(title, author, pages, read));
   displayBooks();
+  setPageEventListeners();
   hideForm();
 }
 
@@ -96,18 +93,28 @@ function setFormEventListeners() {
 }
 
 function setPageEventListeners() {
+  // toggle read status when user clicks complete
   let completeBtn = document.querySelectorAll('.mark-complete');
   completeBtn.forEach(e => {
     e.addEventListener('click', changeReadStatus);
-  });
+  })
+  // remove book and card when user clicks trash button
+  let trashBtn = document.querySelectorAll('.trash');
+  trashBtn.forEach(e => {
+    e.addEventListener('click', deleteCard);
+  })
+}
+
+function deleteCard() {
+  let cardId = this.parentNode.parentNode.id;// get index from ID of parent node
+  myLibrary.splice(cardId, 1);
+  displayBooks();
 }
 
 function changeReadStatus() {
-  // get index from ID of parent node
   let cardId = this.parentNode.parentNode.id;
   myLibrary[cardId].toggleRead();
   displayBooks();
-  setPageEventListeners();
 }
 
 function showAddBooksForm() {

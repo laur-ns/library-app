@@ -70,8 +70,6 @@ img {
 
 .card {
   width: 32%;
-  min-width: 405px;
-  max-width: 550px;
   flex-grow: 1;
   height: 300px;
   border-radius: 5px;

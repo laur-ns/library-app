@@ -7,6 +7,14 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleRead = () => {
+  // insert code here
+}
+
+Book.prototype.removeBook = () => {
+  // insert code here
+}
+
 function addBookToLibrary() {
   let title = prompt('Enter the title of the book');
   let author = prompt('Enter the author');
@@ -14,11 +22,6 @@ function addBookToLibrary() {
   let read = false;
   myLibrary.push(new Book(title, author, pages, read));
 }
-
-// -- temp -- //
-myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
-myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
-// --      -- //
 
 function displayBooks() {
   let newCard;
@@ -48,7 +51,7 @@ function CreateElements(index) {
   this.btnsArea = document.createElement('div');
   this.btnsArea.setAttribute('class', 'button-area');
   this.markCompleteBtn = document.createElement('button');
-  this.markCompleteBtn.textContent = 'Mark as completed';
+  this.markCompleteBtn.textContent = 'Mark as complete';
   this.trashBtn = document.createElement('button');
   this.trashBtn.setAttribute('class', 'trash');
 }
@@ -64,17 +67,8 @@ function appendCard(newCard) {
   newCard.btnsArea.append(newCard.markCompleteBtn);
   newCard.btnsArea.append(newCard.trashBtn);
 }
-      // <div class='card incomplete'>
-      //   <div class='text-area'>
-      //     <h1>Placeholder Text</h1>
-      //     <h3>Author Name</h3>
-      //     <p>Pages: 34</p>
-      //   </div>
-      //   <div class='button-area'>
-      //     <button>Mark as completed</button>
-      //     <button class='trash'><img src='./trash.svg'></img></button>
-      //   </div>
-      // </div>
 
 // -- initialize -- //
+myLibrary[0] = new Book('Harry Potter', 'JK Rowling', '500', true);
+myLibrary[1] = new Book('The Hobbit', 'J.R.R. Tolkien', '349', false);
 displayBooks();

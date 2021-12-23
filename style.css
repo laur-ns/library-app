@@ -214,6 +214,8 @@ img {
 }
 
 .close {
+  margin-top: -1px;
+  margin-right: -1px;
   align-self: flex-end;
   background-color: white;
   border: 1px solid white;

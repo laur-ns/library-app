@@ -15,15 +15,8 @@ Book.prototype.removeBook = () => {
   // insert code here
 }
 
-function addBookToLibrary() {
-  let title = prompt('Enter the title of the book');
-  let author = prompt('Enter the author');
-  let pages = prompt('Enter number of pages');
-  let read = false;
-  myLibrary.push(new Book(title, author, pages, read));
-}
-
 function displayBooks() {
+  removeCards();
   let newCard;
   for (let key in myLibrary) {
     newCard = new CreateElements(key);
@@ -68,6 +61,24 @@ function appendCard(newCard) {
   newCard.btnsArea.append(newCard.trashBtn);
 }
 
+function removeCards() {
+  let cards = document.querySelectorAll('.card');
+  cards.forEach(e => {
+    if (!(e.getAttribute('class').includes('add'))) {
+      e.remove();
+    }
+  });
+}
+
+function addBookToLibrary() {
+  let title = document.querySelector('#bookTitle').value;
+  let author = document.querySelector('#bookAuthor').value;
+  let pages = document.querySelector('#numPages').value;
+  let read = document.querySelector('#isRead').checked;
+  myLibrary.push(new Book(title, author, pages, read));
+  displayBooks();
+}
+
 function setFormEventListeners() {
   let cardPlus = document.querySelector('.body .add');
   cardPlus.addEventListener('click', showAddForm);
@@ -81,6 +92,9 @@ function setFormEventListeners() {
   closeForm.forEach(e => {
     e.addEventListener('click', hideForm);
   });
+
+  let newBook = document.querySelector('#new-book button');
+  newBook.addEventListener('click', addBookToLibrary);
 }
 
 function showAddForm() {
@@ -89,7 +103,7 @@ function showAddForm() {
 }
 
 function showEditForm() {
-
+  document.getElementById('blur').style.display = 'block';
 }
 
 function hideForm() {

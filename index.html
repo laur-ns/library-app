@@ -29,21 +29,20 @@
       </div>
     </div>
 
-    <div class='blur'>
-      <div class='book-form'>
-        <div class='close'>X</div>
-        <form id='new-book'>
-          <h1>Add a New Book</h1>
-          <input type='text' placeholder='Title' name='bookTitle'>
-          <input type='text' placeholder='Author' name='bookAuthor'>
-          <input type='number' placeholder='Number of pages' name='numPages'>
-          <div class='checkbox-wrapper'>
-            <label for='isRead'>Finished reading: </label>
-            <input type='checkbox' name='isRead'>
-          </div>
-          <input type='submit' name='submitNewBook'>
-        </form>
-      </div>
+    <div class='blur'></div>
+    <div class='book-form'>
+      <button class='close'>×</button>
+      <form id='new-book'>
+        <h1>Add a New Book</h1>
+        <input type='text' placeholder='Title' name='bookTitle' class='text'>
+        <input type='text' placeholder='Author' name='bookAuthor' class='text'>
+        <input type='number' placeholder='Number of pages' name='numPages' class='text'>
+        <div class='checkbox-wrapper'>
+          <label for='isRead'>Finished reading: </label>
+          <input type='checkbox' name='isRead' class='checkbox'>
+        </div>
+        <input type='submit' name='submitNewBook' class='submit'>
+      </form>
     </div>
   </body>
 </html>

@@ -143,5 +143,4 @@ function hideForm() {
 myLibrary[0] = new Book('The Lord of The Rings', 'J.R.R. Tolkien', '1216', false);
 myLibrary[1] = new Book('Travel Team', 'Mike Lupica', '304', true);
 displayBooks();
-setFormEventListeners();
 setPageEventListeners();

@@ -1,16 +1,17 @@
 // another git branching test
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-
-Book.prototype.toggleRead = function() {
-  if (this.read) { this.read = false; }
-  else { this.read = true }
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  toggleRead() {
+    if (this.read) { this.read = false; }
+    else { this.read = true }
+  }
 }
 
 function displayBooks() {
@@ -31,22 +32,24 @@ function displayBooks() {
   setPageEventListeners();
 }
 
-function CreateElements(index) {
-  this.card = document.createElement('div');
-  this.card.setAttribute('id', `${index}`); // associates card with book of index
-  this.card.setAttribute('class', 'card incomplete');
-  this.textArea = document.createElement('div');
-  this.textArea.setAttribute('class', 'text-area');
-  this.title = document.createElement('h1');
-  this.author = document.createElement('h3');
-  this.pages = document.createElement('p');
-  this.btnsArea = document.createElement('div');
-  this.btnsArea.setAttribute('class', 'button-area');
-  this.markCompleteBtn = document.createElement('button');
-  this.markCompleteBtn.textContent = 'Mark as complete';
-  this.markCompleteBtn.setAttribute('class', 'mark-complete');
-  this.trashBtn = document.createElement('button');
-  this.trashBtn.setAttribute('class', 'trash');
+class CreateElements {
+  constructor(index) {
+    this.card = document.createElement('div');
+    this.card.setAttribute('id', `${index}`); // associates card with book of index
+    this.card.setAttribute('class', 'card incomplete');
+    this.textArea = document.createElement('div');
+    this.textArea.setAttribute('class', 'text-area');
+    this.title = document.createElement('h1');
+    this.author = document.createElement('h3');
+    this.pages = document.createElement('p');
+    this.btnsArea = document.createElement('div');
+    this.btnsArea.setAttribute('class', 'button-area');
+    this.markCompleteBtn = document.createElement('button');
+    this.markCompleteBtn.textContent = 'Mark as complete';
+    this.markCompleteBtn.setAttribute('class', 'mark-complete');
+    this.trashBtn = document.createElement('button');
+    this.trashBtn.setAttribute('class', 'trash');
+  }
 }
 
 function appendCard(newCard) {
